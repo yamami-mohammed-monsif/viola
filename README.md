@@ -6,7 +6,8 @@
 
 ```
 brandName      → اسم البراند
-tagline        → السلوقان
+tagline        → العنوان الرئيسي
+taglineSecondary → العنوان الثانوي
 price          → السعر الجديد
 originalPrice  → السعر المشطوب (اتركه "" باش يختفي)
 stockCount     → عدد القطع الباقية
@@ -17,6 +18,7 @@ testimonials   → بدل التعليقات بتعليقات حقيقية
 ## كيفاش تبدل الصور
 
 ضع الصور في `public/images/`:
+
 - `hero-desktop.jpg` — صورة الهيرو للـ Desktop (16:9)
 - `hero-tablet.jpg` — صورة الهيرو للـ Tablet (4:3)
 - `hero-mobile.jpg` — صورة الهيرو للموبايل (9:16)

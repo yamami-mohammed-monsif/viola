@@ -8,7 +8,7 @@ export const config = {
   // ── 🏷️ Brand ──────────────────────────────────────────────
   brandName: "VIOLA",
   tagline: "شعرك يستاهل الأحسن",
-  taglineSecondary: "إليكسير الأرغان — يرمم ويقوي الشعر التالف 🇩🇿",
+  taglineSecondary: "بإليكسير الأرغان — يرمم ويقوي الشعر التالف من أول استعمال",
 
   // ── 💆 Product ─────────────────────────────────────────────
   productName: "Viola Argan Elixir Duo",

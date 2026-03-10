@@ -28,8 +28,8 @@ export default function Hero() {
       {/* ── Brand name — top-left corner logo mark ── */}
       <div className="absolute top-6 left-6 z-20 flex flex-col items-center gap-1">
         <p
-          className="font-cormorant font-semibold tracking-[0.25em] uppercase"
-          style={{ fontSize: "0.85rem", color: "#8B1A2B" }}
+          className="font-cormorant font-bold tracking-[0.25em] uppercase"
+          style={{ fontSize: "1rem", color: "#8B1A2B" }}
         >
           {config.brandName}
         </p>
@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="mr-0 ml-auto w-full md:w-[50%] flex flex-col gap-4 items-start">
           {/* Headline — main promise, not the brand name */}
           <h1
-            className="font-cormorant font-semibold leading-tight hero-animate-1"
+            className="font-cairo font-semibold leading-tight hero-animate-1"
             style={{ fontSize: "clamp(2.2rem, 5.5vw, 4rem)", color: "#FAF3E8" }}
           >
             {config.tagline}
@@ -61,7 +61,7 @@ export default function Hero() {
             className="font-cairo text-base md:text-lg hero-animate-2"
             style={{ color: "rgba(250,243,232,0.85)" }}
           >
-            بإليكسير الأرغان — يرمم ويقوي الشعر التالف من أول استعمال
+            {config.taglineSecondary}{" "}
           </p>
 
           {/* Price */}
