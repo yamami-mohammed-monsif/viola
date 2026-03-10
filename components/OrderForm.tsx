@@ -7,7 +7,13 @@ type OrderFormProps = {
 };
 
 export default function OrderForm({ onSubmitSuccess }: OrderFormProps) {
-  const [form, setForm] = useState({ name: "", phone: "", wilaya: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    wilaya: "",
+    baladiya: "",
+  });
+  const [deliveryType, setDeliveryType] = useState<"مكتب" | "بيت">("مكتب");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -36,6 +42,7 @@ export default function OrderForm({ onSubmitSuccess }: OrderFormProps) {
       `الاسم: ${form.name}\n` +
       `الهاتف: ${form.phone}\n` +
       `الولاية: ${form.wilaya}\n` +
+      `البلدية: ${form.baladiya}\n` +
       `السعر: ${config.price}`,
   );
   const whatsappLink = `https://wa.me/${config.whatsappNumber}?text=${whatsappMsg}`;
@@ -184,6 +191,73 @@ export default function OrderForm({ onSubmitSuccess }: OrderFormProps) {
             {errors.wilaya}
           </p>
         )}
+      </div>
+
+      {/* البلدية — free text input, NOT a dropdown */}
+      <div className="flex flex-col gap-1">
+        <label
+          className="font-cairo text-sm font-semibold"
+          style={{ color: "var(--color-text)" }}
+        >
+          البلدية
+        </label>
+        <input
+          type="text"
+          placeholder="مثال: باب الوادي، حيدرة..."
+          value={form.baladiya}
+          onChange={(e) => {
+            setForm((f) => ({ ...f, baladiya: e.target.value }));
+            setErrors((er) => ({ ...er, baladiya: "" }));
+          }}
+          className="w-full font-cairo text-sm px-4 py-3 rounded-xl outline-none text-right"
+          style={{
+            background: "var(--color-surface)",
+            border: `1px solid ${errors.baladiya ? "#8B1A2B" : "var(--color-border)"}`,
+            color: "var(--color-text)",
+            minHeight: "48px",
+          }}
+        />
+        {errors.baladiya && (
+          <p className="font-cairo text-xs" style={{ color: "#8B1A2B" }}>
+            {errors.baladiya}
+          </p>
+        )}
+      </div>
+
+      {/* نوع التوصيل — two-option toggle, NOT a dropdown */}
+      <div className="flex flex-col gap-2">
+        <label
+          className="font-cairo text-sm font-semibold"
+          style={{ color: "var(--color-text)" }}
+        >
+          نوع التوصيل
+        </label>
+        <div className="flex gap-3 w-full">
+          {(["مكتب", "بيت"] as const).map((type) => {
+            const label =
+              type === "مكتب" ? "التوصيل الى المكتب" : "التوصيل الى البيت";
+            const active = deliveryType === type;
+            return (
+              <button
+                key={type}
+                type="button"
+                onClick={() => setDeliveryType(type)}
+                className="flex-1 font-cairo text-sm py-3 rounded-xl transition-all"
+                style={{
+                  background: active
+                    ? "var(--color-primary)"
+                    : "var(--color-surface)",
+                  color: active ? "#FAF3E8" : "var(--color-muted)",
+                  border: `1px solid ${active ? "var(--color-primary)" : "var(--color-border)"}`,
+                  fontWeight: active ? 600 : 400,
+                  minHeight: "48px",
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Buttons */}
