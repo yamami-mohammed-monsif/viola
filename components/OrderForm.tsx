@@ -70,7 +70,10 @@ export default function OrderForm({ onSubmitSuccess }: OrderFormProps) {
       <div>
         <h3
           className="font-cormorant font-semibold text-xl mb-1"
-          style={{ color: "var(--color-text)" }}
+          style={{
+            color: "var(--color-text)",
+            fontSize: "clamp(1.4rem, 3vw, 2rem)",
+          }}
         >
           احصلي عليه الآن
         </h3>
