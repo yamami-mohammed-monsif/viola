@@ -96,7 +96,7 @@ export default function Hero() {
               { icon: "✨", text: "بدون سلفات — لطيف على الشعر المصبوغ" },
               {
                 icon: "🚚",
-                text: `توصيل ${config.deliveryTime} — ${config.deliveryPrice}`,
+                text: `توصيل ${config.deliveryTime}`,
               },
               { icon: "📦", text: "جميع ولايات الجزائر الـ 58" },
               { icon: "↩️", text: "استرجاع خلال 7 أيام" },

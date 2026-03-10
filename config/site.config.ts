@@ -21,8 +21,7 @@ export const config = {
   deliveryTime: "3-5 أيام",
 
   // ── 📦 Delivery ────────────────────────────────────────────
-  deliveryNote: "🇩🇿 التوصيل لكل ولايات الجزائر",
-  deliveryPrice: "400 DA",
+  deliveryNote: " التوصيل لكل ولايات الجزائر",
 
   // ── 📱 Contact ─────────────────────────────────────────────
   whatsappNumber: "213550000000",
@@ -49,7 +48,7 @@ export const config = {
       text: "منتج بجودة عالية وسعر معقول، رائحته زوينة وتعمل على الشعر المصبوغ برشة",
     },
   ],
-  testimonialsSectionTitle: "شنو قالت عملاؤنا",
+  testimonialsSectionTitle: "وش قالو العملاء تاعنا",
   testimonialsRating: "4.9",
   testimonialsRatingCount: "بناءً على +350 طلبية",
 
