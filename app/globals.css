@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Brand palette — set by builder, locked from client ── */
+:root {
+  --color-bg:       #F0DFC0;
+  --color-primary:  #8B1A2B;
+  --color-text:     #2C1A0A;
+  --color-surface:  #FAF3E8;
+  --color-border:   #E0C9A0;
+  --color-muted:    #8A6A4A;
+}
+
+html, body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ── Font utilities via CSS variable injected by next/font ── */
+.font-cormorant { font-family: var(--font-cormorant), Georgia, serif; }
+.font-cairo     { font-family: var(--font-cairo), 'Segoe UI', Tahoma, sans-serif; }
+
+/* ── Hero entrance animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-animate-1 { animation: fadeInUp 0.6s ease forwards; animation-delay: 0.10s; opacity: 0; }
+.hero-animate-2 { animation: fadeInUp 0.6s ease forwards; animation-delay: 0.25s; opacity: 0; }
+.hero-animate-3 { animation: fadeInUp 0.6s ease forwards; animation-delay: 0.40s; opacity: 0; }
+.hero-animate-4 { animation: fadeInUp 0.6s ease forwards; animation-delay: 0.55s; opacity: 0; }
+.hero-animate-5 { animation: fadeInUp 0.6s ease forwards; animation-delay: 0.70s; opacity: 0; }
+.hero-animate-6 { animation: fadeInUp 0.5s ease forwards; animation-delay: 0.85s; opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate-1,.hero-animate-2,.hero-animate-3,
+  .hero-animate-4,.hero-animate-5,.hero-animate-6 {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
